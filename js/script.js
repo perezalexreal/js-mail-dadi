@@ -19,4 +19,26 @@
 //      console.log("Non hai inserito l'email giusta");
 //  }
 
-console.log("kkd");
+const play = document.getElementById("play");
+
+const textPc = document.getElementById("points-pc");
+
+const textUser = document.getElementById("points-user");
+
+const result = document.getElementById("result");
+
+play.addEventListener('click', function (){
+    
+    const userPoints = Math.floor(Math.random() * 6) + 1
+    
+    const pcPoints = Math.floor(Math.random() * 6) + 1
+    
+    if ( pcPoints > userPoints ) {
+        result.innerHTML = "Hai perso!"
+    } else {
+        result.innerHTML = "Hai vinto!"
+    }
+    
+    textPc.innerHTML =  `Punteggio del pc: ${pcPoints}`
+    textUser.innerHTML = `Punteggio dell'utente: ${userPoints}` 
+});
